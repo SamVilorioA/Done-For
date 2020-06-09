@@ -18,6 +18,19 @@ footer a{
 }
 h3{
     font-family: "montserrat", sans-serif;
+    font-size: 1.4em;
+}
+.contenido{
+    justify-content: center;
+    position: relative;
+    text-align: right;
+}
+.contact{
+    color: #4BD7E9;
+}
+span{
+    color: black;
+    font-weight: bold;
 }
 /*Share social media*/
 .share-button{
