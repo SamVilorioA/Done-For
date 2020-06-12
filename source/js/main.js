@@ -5,6 +5,8 @@ function AddList(numList = 1)
     const ul = document.createElement('ul');
     const li = document.createElement('li');
     const tfield = document.createElement('input');
+    const chField = document.createElement('input');
+    const lbl = document.createElement('label');
     //list element
     list.className = "lista"+numList;
     list.textContent = "Lista #"+numList;
@@ -15,7 +17,17 @@ function AddList(numList = 1)
     //textfield element
     tfield.type = 'type';
     tfield.placeholder = "Introduzca tarea";
+    //checkbox element
+    chField.type = 'checkbox';
+    chField.id= 'ch1';
+    chField.value = 'tarea1';
+    //label element
+    lbl.textContent = 'Tarea #1 ';
+    lbl.for = 'ch1';
     //appending the elements
+    li.appendChild(lbl);
+    li.appendChild(chField);
+    li.appendChild(document.createElement('br'));
     li.appendChild(tfield);
     ul.appendChild(li);
     list.appendChild(ul);
