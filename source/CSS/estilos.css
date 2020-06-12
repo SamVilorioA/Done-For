@@ -37,10 +37,27 @@
     height: 30px;
 }
 
-/*FOOTER*/
-footer a{
-    font-size: 20px;
+/*MAIN STYLES*/
+
+.contenedor{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    width: 100%;
+    height: 65vh;
+    background: rgb(204, 203, 203);
+    text-align: center;
+    color: rgb(168, 168, 168);
 }
+#Lists{
+    text-align: left;
+    /*flex-wrap: wrap;*/
+}
+
+
+
+
+/*FOOTER*/
 h3{
     font-family: "montserrat", sans-serif;
     font-size: 1.4em;
@@ -52,6 +69,7 @@ h3{
 }
 .nombre{
     color: #FFFF;
+    font-size: 13px;
 }
 .nombre:hover{
     text-decoration: none;
@@ -63,6 +81,8 @@ h3{
 }
 span{
     color: black;
+    font-size: 13px;
+    padding: 2px;
 }
 /*Share social media
 .share-button{
