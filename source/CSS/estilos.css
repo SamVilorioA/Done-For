@@ -1,10 +1,11 @@
 /*NAVBAR STYLES*/
-.navList{
+/*.navList{
     text-align: center;
-    text-decoration: underline;
-    padding: 1em 0;
+    color: red;
+    padding: 0;
+    margin: 0;
     display: inline;
-}
+}*/
 #add, #show{
     font-weight: bold;
     font-size: 20px;
@@ -13,12 +14,12 @@
 #add, #show{
     color: #ffff;
     text-decoration: none;
-}
+}/*
 .activo{
     width: 150px;
     height: 3px;
     background-color: #4BD7E9;
-}
+}*/
 #show:hover, #add:hover{
     color: #4BD7E9;
     background: #7F7E7E;
