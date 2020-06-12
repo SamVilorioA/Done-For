@@ -21,7 +21,17 @@
 }
 #show:hover, #add:hover{
     color: #4BD7E9;
-}
+    background: #7F7E7E;
+}/*
+.fondo{
+    padding-top: 30px;
+    padding-bottom: 35px;
+    
+}*/
+/*
+.fondo:hover{
+    background: #7F7E7E;
+}*/
 .link-img{
     width: 30px;
     height: 30px;
@@ -40,12 +50,19 @@ h3{
     position: relative;
     text-align: right;
 }
+.nombre{
+    color: #FFFF;
+}
+.nombre:hover{
+    text-decoration: none;
+    color: #4BD7E9;
+    width: 150px;
+}
 .contact{
     color: #4BD7E9;
 }
 span{
     color: black;
-    font-weight: bold;
 }
 /*Share social media
 .share-button{
