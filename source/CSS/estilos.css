@@ -40,8 +40,6 @@
 
 /*MAIN STYLES*/
 .contenedor{
-    margin-top: 5px;
-    margin-bottom: 5px;
     border-radius: 5px;
     height: 68vh;
     background: rgb(240, 237, 237);
@@ -49,10 +47,12 @@
     overflow: auto;
     padding-bottom: 10px;
     border: solid 1px;
+    margin: 10px auto;
 }
 #Lists{
     padding-top: 6px;
-    display: contents;
+    /*display: contents;*/
+    text-align: center;
 }
 #Lists span{
     display: inline-block;
@@ -67,6 +67,7 @@
     border-radius: 5px;
     font-family: 'Montserrat';
     text-align: center;
+    width: 260px;
 }
 ul{
     list-style-type: none;
