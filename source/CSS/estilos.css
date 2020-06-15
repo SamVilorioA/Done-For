@@ -10,6 +10,7 @@
     font-weight: bold;
     font-size: 20px;
     text-decoration:none;        /*#4BD7E9*/
+    margin-bottom: 10px;
 }
 #add, #show{
     color: #ffff;
@@ -53,29 +54,51 @@
     padding-top: 6px;
     /*display: contents;*/
     text-align: center;
-}
+}/*
+.lista-header{
+    font-size: 20px;
+    color: #FFFF;
+}*/
+
 #Lists span{
     display: inline-block;
     border: 2px solid blueviolet;
     background: #4BD7E9;
     margin-left: 3px;
     margin-bottom: 3px;
-    padding-left: 5px;
+    padding-left: 10px;
     margin-top: 5px;
     margin-right: 5px;
-    font-size: 15px;
+    font-size: 17px;
     border-radius: 5px;
-    font-family: 'Montserrat';
+    font-family: /*'Montserrat';*/ 'PT Serif', serif;
     text-align: center;
     width: 258px;
 }
 ul{
     list-style-type: none;
-}
-#Lists input{
-    margin-right: 20px;
-    margin-bottom: 0;
     padding: 0;
+    margin: 0;
+}
+.ready{
+    text-decoration: line-through
+}
+.txtInput{
+    margin-bottom: 5px;
+   /* margin-left: 20px;*/
+   display: flex;
+   justify-content: start;
+}
+span li{
+    padding-top: 3px;
+   /* margin-left: 32%;*/
+    display: flex;
+}
+.checkbox{
+    margin-top: 5px;
+}
+li label{
+    padding-left: 5px;
 }
 
 /*FOOTER*/
