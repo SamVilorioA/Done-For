@@ -38,6 +38,17 @@
     width: 30px;
     height: 30px;
 }
+.logo{
+    font-size: 40px;
+    font-family: 'Lobster', cursive;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    line-height: 1.3em;
+    /*margin-right: 20px;*/
+    padding: 3px 10px;
+}
 
 /*MAIN STYLES*/
 .contenedor{
@@ -79,26 +90,39 @@ ul{
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
+}/*
 .ready{
     text-decoration: line-through
-}
+}*/
 .txtInput{
     margin-bottom: 5px;
    /* margin-left: 20px;*/
    display: flex;
    justify-content: start;
+   border-radius: 5px;
+   border: 1px solid;
+   background: rgb(228, 226, 226);
+   width: 90%;
 }
 span li{
     padding-top: 3px;
    /* margin-left: 32%;*/
     display: flex;
+}/*
+.checkbox{}*/
+[type="checkbox"]{
+    margin-top: 8px;
+    cursor: pointer;
 }
-.checkbox{
-    margin-top: 5px;
+input[type="checkbox"]:checked ~ label{
+    text-decoration: line-through;
 }
 li label{
+    text-align: left;
     padding-left: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 /*FOOTER*/
