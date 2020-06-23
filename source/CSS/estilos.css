@@ -71,7 +71,7 @@
     color: #FFFF;
 }*/
 
-#Lists span{
+#Lists .list-container{
     display: inline-block;
     border: 2px solid blueviolet;
     background: #4BD7E9;
