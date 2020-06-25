@@ -19,7 +19,7 @@ function AddList(numList = 1)
     ul.id = 'ul'+numList;
     //option button element
     opt.className = 'options';
-    opt.innerHTML= '&hellip;';
+    opt.innerHTML= /*'&hellip;';*/ '<i class="fas fa-ellipsis-h"></i>';
     //opt.onclick = function(){this.parentNode.style.display = 'none';}
     //textfield element
     tfield.type = 'type';
@@ -53,7 +53,7 @@ function addTask(tf){
     lbl.id = `lbl-${idParent}.${nli}`;
     lbl.for = `${chkb.id}`;
     //options button
-    opts.innerHTML = '&hellip;';
+    opts.innerHTML = /*'&hellip;';*/ '<i class="fas fa-ellipsis-h"></i>'
     opts.className = 'taskOptions';
     //erasebtn.onclick = function(){this.parentNode.style.display = 'none';};
     //add to the list
@@ -74,5 +74,5 @@ function addEventEnter(id){
 function load(){
     const add = document.getElementById("add");
     let nList = 0;
-    add.addEventListener("click", function(){AddList(++nList)});    
+    add.addEventListener("click", function(){AddList(++nList)});
 }
