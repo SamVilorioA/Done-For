@@ -32,6 +32,7 @@ function AddList(numList = 1)
     list.appendChild(tfield);
     lists.appendChild(list);
     addEventEnter(tfield.id);
+    opt.addEventListener('click',createSubMenu(numList));
 }
 
 function addTask(tf){
@@ -53,7 +54,7 @@ function addTask(tf){
     lbl.id = `lbl-${idParent}.${nli}`;
     lbl.for = `${chkb.id}`;
     //options button
-    opts.innerHTML = /*'&hellip;';*/ '<i class="fas fa-ellipsis-h"></i>'
+    opts.innerHTML = /*'&hellip;';*/ '<i class="fas fa-times"></i>'
     opts.className = 'taskOptions';
     //erasebtn.onclick = function(){this.parentNode.style.display = 'none';};
     //add to the list
@@ -75,4 +76,22 @@ function load(){
     const add = document.getElementById("add");
     let nList = 0;
     add.addEventListener("click", function(){AddList(++nList)});
+}
+
+function createSubMenu(id){
+    const div = document.createElement('div');
+    const img1 = document.createElement('label');
+    const img2 = document.createElement('label');
+    div.className = 'subMenu';
+    img1.className = 'img';
+    img2.className = 'img';
+    img1.innerHTML = '<i class="far fa-edit ico-menu"></i>';
+    img2.innerHTML = '<i class="far fa-trash-alt ico-menu"></i>';
+
+    let subMenu = document.querySelector(`#list-${id}`);
+        subMenu.appendChild(div);
+        div.appendChild(img1);
+        div.appendChild(img2);
+        subMenu.insertBefore(div, document.querySelector(`#ul${id}`));
+        console.log(subMenu);
 }
