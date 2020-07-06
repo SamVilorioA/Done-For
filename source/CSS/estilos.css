@@ -134,18 +134,18 @@
     width: 30px;
     text-align: center;
 }
-.taskOptions{
+.taskDelete{
     display: inline-block;
     margin-left: 5px;
     padding-right: 4px;
     opacity: 0;
 }
- label:hover ~ .taskOptions{
+ label:hover ~ .taskDelete{
     cursor: pointer;
     color: crimson;
     opacity: 1;
 }
-.taskOptions:hover{
+.taskDelete:hover{
     width: 25px;
     cursor: pointer;
     background: rgb(236, 235, 235);
