@@ -20,9 +20,14 @@ function AddList(numList = 1)
     ul.id = `ul-${numList}`;
     //option button element
     opt.className = 'options';
+    /*opt.setAttribute('data-toggle','collapse');
+    opt.setAttribute('aria-expanded', 'false');
+    opt.setAttribute('data-target', '#collapseDiv');
+    opt.setAttribute('aria-controls', 'collapseDiv');*/
     opt.innerHTML= '&hellip;';// '<i class="fas fa-ellipsis-h"></i>';
     //opt.onclick = function(){this.parentNode.style.display = 'none';}
     //textfield element
+    
     tfield.type = 'text';
     tfield.placeholder = "Introduzca tarea";
     tfield.id = `tf${numList}`;
@@ -34,7 +39,8 @@ function AddList(numList = 1)
     list.appendChild(tfield);
     lists.appendChild(list);
     addEventEnter(tfield.id);
-    opt.addEventListener('click',createSubMenu(numList));
+    createSubMenu(numList);
+        
 }
 
 function addTask(tf){
@@ -88,12 +94,12 @@ function editElement(p_Element)
     element.appendChild(tfield);
     addEventEnter(tfield.id);
 }
-function saveChange(tf)
+function saveChange(p_textField)
 {
-    if(tf.value != 0)
+    if(p_textField.value != 0)
     {
-        const title = tf.parentElement;
-        title.textContent = tf.value;
+        const title = p_textField.parentElement;
+        title.textContent = p_textField.value;
         //tf.remove();
     }
 }
@@ -135,6 +141,7 @@ function createSubMenu(id){
     const editB = document.createElement('label');
     const deleteB = document.createElement('label');
     div.className = 'subMenu';
+    div.id = 'collapseDiv';
     editB.className = 'img far fa-edit ico-menu';
     editB.id = `ed-${id}`;
     deleteB.className = 'img far fa-trash-alt ico-menu';
@@ -146,5 +153,6 @@ function createSubMenu(id){
     div.appendChild(deleteB);
     subMenu.insertBefore(div, document.querySelector(`#ul-${id}`));
     addEventClick(deleteB.id);
-    addEventClick(editB.id);
+    addEventClick(editB.id);   
+    
 }
