@@ -8,22 +8,24 @@ function AddList(numList = 1)
     const chField = document.createElement('input');
     const lbl = document.createElement('label');
     const hd = document.createElement('span');
-    const opt = document.createElement('label');
+    /*const opt = document.createElement('label');*/
+    const opt = document.createElement('button');
     //list element
     list.className = 'list-container';
     list.id = `list-${numList}`;
     //title element
     hd.id =  `lt-${numList}`;
+    hd.className = 'title';
     hd.textContent = `Lista #${numList}`;
     // ul element
     ul.className = 'list-ul';
     ul.id = `ul-${numList}`;
     //option button element
-    opt.className = 'options';
-    /*opt.setAttribute('data-toggle','collapse');
+    opt.className = 'options btn btn-light';
+    opt.setAttribute('data-toggle','collapse');
     opt.setAttribute('aria-expanded', 'false');
-    opt.setAttribute('data-target', '#collapseDiv');
-    opt.setAttribute('aria-controls', 'collapseDiv');*/
+    opt.setAttribute('data-target', `#collapseDiv-${numList}`);
+    opt.setAttribute('aria-controls', `collapseDiv-${numList}`);
     opt.innerHTML= '&hellip;';// '<i class="fas fa-ellipsis-h"></i>';
     //opt.onclick = function(){this.parentNode.style.display = 'none';}
     //textfield element
@@ -90,6 +92,7 @@ function editElement(p_Element)
     tfield.id = `e_tf-${p_Element}`;
     tfield.placeholder = 'Nombre de la lista';
     tfield.value = element.textContent;
+    tfield.className = 'titleInput';
     element.textContent = '';
     element.appendChild(tfield);
     addEventEnter(tfield.id);
@@ -140,8 +143,8 @@ function createSubMenu(id){
     const div = document.createElement('div');
     const editB = document.createElement('label');
     const deleteB = document.createElement('label');
-    div.className = 'subMenu';
-    div.id = 'collapseDiv';
+    div.className = 'collapse subMenu';
+    div.id = `collapseDiv-${id}`;
     editB.className = 'img far fa-edit ico-menu';
     editB.id = `ed-${id}`;
     deleteB.className = 'img far fa-trash-alt ico-menu';
