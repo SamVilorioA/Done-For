@@ -10,38 +10,52 @@ function AddList(numList = 1)
     const hd = document.createElement('span');
     /*const opt = document.createElement('label');*/
     const opt = document.createElement('button');
+    const contenedor = document.createElement('div'); //contenedor del options
+    
     //list element
     list.className = 'list-container';
     list.id = `list-${numList}`;
+
     //title element
     hd.id =  `lt-${numList}`;
     hd.className = 'title';
     hd.textContent = `Lista #${numList}`;
+
     // ul element
     ul.className = 'list-ul';
     ul.id = `ul-${numList}`;
+
+    //contenedor del dropdown
+    contenedor.className = `dropdown`;
+    contenedor.id = list.id;
+
     //option button element
     opt.className = 'options btn btn-light';
-    opt.setAttribute('data-toggle','collapse');
-    opt.setAttribute('aria-expanded', 'false');
-    opt.setAttribute('data-target', `#collapseDiv-${numList}`);
-    opt.setAttribute('aria-controls', `collapseDiv-${numList}`);
-    opt.innerHTML= '&hellip;';// '<i class="fas fa-ellipsis-h"></i>';
-    //opt.onclick = function(){this.parentNode.style.display = 'none';}
-    //textfield element
+   // opt.setAttribute('data-toggle','dropdown');
+    opt.type = 'button';
+    opt.innerHTML = '&hellip;';
+   // opt.setAttribute('aria-expanded', 'false');
+    //opt.setAttribute('data-target', `#collapseDiv-${numList}`);
+    //opt.setAttribute('aria-controls', `collapseDiv-${numList}`);
+   // opt.innerHTML= '&hellip;';
     
     tfield.type = 'text';
     tfield.placeholder = "Introduzca tarea";
     tfield.id = `tf${numList}`;
     tfield.className = 'txtInput';
+
     //appending elements
     list.appendChild(hd);
-    list.appendChild(opt);
+    list.appendChild(contenedor);
+    contenedor.appendChild(opt);
+    //list.appendChild(opt);
     list.appendChild(ul);
     list.appendChild(tfield);
     lists.appendChild(list);
+    
     addEventEnter(tfield.id);
     createSubMenu(numList);
+    contenedor.appendChild(document.querySelector(`#dropDownDiv-${numList}`));
         
 }
 
@@ -141,10 +155,14 @@ function load(){
 
 function createSubMenu(id){
     const div = document.createElement('div');
+    const ul = document.createElement('ul');
+    const li = document.createElement('li');
+    const li_2 = document.createElement('li');
     const editB = document.createElement('label');
     const deleteB = document.createElement('label');
-    div.className = 'collapse subMenu';
-    div.id = `collapseDiv-${id}`;
+    
+    div.className = 'subMenu';
+    div.id = `dropDownDiv-${id}`;
     editB.className = 'img far fa-edit ico-menu';
     editB.id = `ed-${id}`;
     deleteB.className = 'img far fa-trash-alt ico-menu';
@@ -152,8 +170,11 @@ function createSubMenu(id){
 
     const subMenu = document.querySelector(`#list-${id}`);
     subMenu.appendChild(div);
-    div.appendChild(editB);
-    div.appendChild(deleteB);
+    div.appendChild(ul);
+    ul.appendChild(li);
+    ul.appendChild(li_2);
+    li.appendChild(editB);
+    li_2.appendChild(deleteB);
     subMenu.insertBefore(div, document.querySelector(`#ul-${id}`));
     addEventClick(deleteB.id);
     addEventClick(editB.id);   
