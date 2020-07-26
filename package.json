@@ -1,0 +1,26 @@
+{
+  "name": "done-for",
+  "version": "1.0.0",
+  "description": "Done-for is a small webApp to create to-do lists that are stored in the localstorage of the client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamVilorioA/Done-For.git"
+  },
+  "keywords": [
+    "to-do",
+    "list",
+    "done-for",
+    "js",
+    "webApp"
+  ],
+  "author": "KingCode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamVilorioA/Done-For/issues"
+  },
+  "homepage": "https://github.com/SamVilorioA/Done-For#readme"
+}
