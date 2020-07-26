@@ -54,7 +54,6 @@ function AddList(numList = 1, p_list = {})
     list.appendChild(hd);
     list.appendChild(contenedor);
     contenedor.appendChild(opt);
-    //list.appendChild(opt);
     list.appendChild(ul);
     list.appendChild(tfield);
     lists.appendChild(list);
@@ -66,7 +65,6 @@ function AddList(numList = 1, p_list = {})
     else{
         for(task in aJson[list.id]['Tasks'])
         {
-            //console.table(aJson[list.id]['Tasks'][task])    
             addTask(0,aJson[list.id]['Tasks'][task], ul.id);
         }
     }    
@@ -78,7 +76,7 @@ function AddList(numList = 1, p_list = {})
 }
 
 function addTask(tf = undefined, p_task = {}, p_ul_id = ''){
-
+    if(!tf.value && !p_task['id']) return null;
     if(tf || tf.value || p_task['id'])
     {    
         const tUl = document.getElementById(p_ul_id) || tf.previousSibling;
@@ -251,7 +249,6 @@ function saveData(){
 //function to retrieve the data
 function getData()
 {
-    //const no_lists = parseInt(localStorage.getItem('LastListId')); //contar la cantidad de listas que hay almacenadas
     /*
         En esta funcion se verificara la existencia de data en el localstorage del cliente para asi crear
         o recrear las listas ya definidas por el usuario
@@ -263,7 +260,6 @@ function getData()
    const data = localStorage.getItem('Data') || 0;
    if(!data.length){return null}; // in case theres no data
    aJson = JSON.parse(data);
-   console.table(aJson);
    let lista = 0
    Object.keys(aJson).forEach(function(list)
    {    
